@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.coiny-regular {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.victor-mono {
+  font-family: "Victor Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  background-color: #f2bdcd;
+  color: #563c5c;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: "Great Vibes";
+}
+
+.header__name {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.header__description {
+  font-family: "Victor Mono";
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  background-color: #e8a8c0;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #563c5c;
+  text-decoration: none;
+  font-family: "Victor Mono";
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.content {
+  padding: 40px 20px;
+  background-color: #fdf2fd;
+}
+
+.card-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card__title {
+  font-family: "Victor Mono";
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #563c5c;
+}
+
+.card__price {
+  font-family: "Great Vibes";
+  font-size: 22px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.card__button {
+  background-color: #f2bdcd;
+  color: #563c5c;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Victor Mono";
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.card__button:hover {
+  background-color: #e8a8c0;
+  transform: scale(1.05);
+}
+
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.about__title {
+  color: #563c5c;
+  margin-bottom: 20px;
+  font-size: 64px;
+  font-family: "Great Vibes";
+}
+
+.about__description {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Victor Mono";
+}
+
+.footer {
+  background-color: #f2bdcd;
+  color: #563c5c;
+  text-align: center;
+  padding: 20px;
+  font-family: "Victor Mono";
+}
+
+/* Планшеты (768px — 1023px)*/
+@media (max-width: 1023px) {
+  .card-container {
+    display: grid;
+    gap: 20px;
+  }
+  .card {
+    width: auto;
+    max-width: 400px;
+    padding: 20px;
+  }
+  .header__name {
+    font-size: 40px;
+  }
+  .header__description {
+    font-size: 14px;
+  }
+  .about {
+    padding: 30px 15px;
+  }
+  .about__title {
+    font-size: 48px;
+  }
+}
+
+/* Мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+  .header {
+    padding: 20px 10px;
+  }
+  .header__name {
+    font-size: 30px;
+  }
+  .header__nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-link {
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .content,
+  .about {
+    padding: 25px 15px 40px;
+  }
+  .card {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+  .card__image {
+    height: auto;
+    max-height: 180px;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__price {
+    font-size: 20px;
+  }
+  .card__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+  }
+  .about__title {
+    font-size: 32px;
+  }
+  .about__description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Большие экраны (1024px и выше) */
+@media (min-width: 1024px) {
+  .card-container {
+    justify-content: space-around;
+  }
+  .card {
+    min-width: 300px;
+  }
+  .about__title {
+    font-size: 56px;
+  }
+}
