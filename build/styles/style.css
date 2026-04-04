@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.coiny-regular {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.victor-mono {
+  font-family: "Victor Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  background-color: #f2bdcd;
+  color: #563c5c;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: "Great Vibes", cursive;
+}
+.header__name {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1023px) {
+  .header__name {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .header__name {
+    font-size: 30px;
+  }
+}
+.header__description {
+  font-family: "Victor Mono", monospace;
+  font-size: 16px;
+  opacity: 0.8;
+}
+@media (max-width: 1023px) {
+  .header__description {
+    font-size: 14px;
+  }
+}
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  .header__nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.nav-link {
+  background-color: #e8a8c0;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #563c5c;
+  text-decoration: none;
+  font-family: "Victor Mono", monospace;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .nav-link {
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.content {
+  padding: 40px 20px;
+  background-color: #fdf2fd;
+}
+@media (max-width: 767px) {
+  .content {
+    padding: 25px 15px 40px;
+  }
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+@media (max-width: 1023px) {
+  .card-container {
+    display: grid;
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .card-container {
+    justify-content: space-around;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 1023px) {
+  .card {
+    width: auto;
+    max-width: 400px;
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+}
+.card__image {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .card__image {
+    max-height: 180px;
+  }
+}
+.card__title {
+  font-family: "Victor Mono", monospace;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #563c5c;
+}
+@media (max-width: 767px) {
+  .card__title {
+    font-size: 20px;
+  }
+}
+.card__price {
+  font-family: "Great Vibes", cursive;
+  font-size: 22px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .card__price {
+    font-size: 20px;
+  }
+}
+.card__button {
+  background-color: #f2bdcd;
+  color: #563c5c;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Victor Mono", monospace;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.card__button:hover {
+  background-color: #e8a8c0;
+  transform: scale(1.05);
+}
+@media (max-width: 767px) {
+  .card__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: white;
+}
+@media (max-width: 767px) {
+  .about {
+    padding: 30px 15px;
+  }
+}
+.about__title {
+  color: #563c5c;
+  margin-bottom: 20px;
+  font-size: 64px;
+  font-family: "Great Vibes", cursive;
+  line-height: 1.2;
+}
+@media (max-width: 1023px) {
+  .about__title {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+}
+@media (max-width: 767px) {
+  .about__title {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+}
+@media (min-width: 1024px) {
+  .about__title {
+    font-size: 56px;
+  }
+}
+.about__description {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Victor Mono", monospace;
+  color: #563c5c;
+  text-align: center;
+}
+.about__description br {
+  display: block;
+  margin: 8px 0;
+}
+@media (max-width: 767px) {
+  .about__description {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+}
+@media (max-width: 1023px) {
+  .about__description {
+    max-width: 500px;
+  }
+}
+
+.footer {
+  background-color: #f2bdcd;
+  color: #563c5c;
+  text-align: center;
+  padding: 20px;
+  font-family: "Victor Mono", monospace;
+}
+.footer p {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

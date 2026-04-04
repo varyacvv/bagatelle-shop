@@ -1,0 +1,334 @@
+// Переменные
+$primary-bg: #f2bdcd;
+$secondary-bg: #fdf2fd;
+$text-color: #563c5c;
+$accent-color: #e74c3c;
+$button-hover: #e8a8c0;
+$shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$card-padding: 25px;
+$gap-default: 30px;
+$transition: all 0.3s ease;
+
+// Шрифты
+$great-vibes: "Great Vibes", cursive;
+$coiny: "Coiny", system-ui;
+$victor-mono: "Victor Mono", monospace;
+
+// Миксины
+@mixin flex-center($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin responsive-font($size) {
+  font-size: $size;
+}
+
+@mixin card-hover() {
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@mixin button-hover() {
+  &:hover {
+    background-color: $button-hover;
+    transform: scale(1.05);
+  }
+}
+
+@mixin media-tablet() {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin media-mobile() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin media-desktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Базовые стили
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.great-vibes-regular {
+  font-family: $great-vibes;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.coiny-regular {
+  font-family: $coiny;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.victor-mono {
+  font-family: $victor-mono;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Шапка
+.header {
+  background-color: $primary-bg;
+  color: $text-color;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: $great-vibes;
+
+  &__name {
+    font-size: 64px;
+    margin-bottom: 10px;
+
+    @include media-tablet {
+      @include responsive-font(40px);
+    }
+
+    @include media-mobile {
+      @include responsive-font(30px);
+    }
+  }
+
+  &__description {
+    font-family: $victor-mono;
+    font-size: 16px;
+    opacity: 0.8;
+
+    @include media-tablet {
+      font-size: 14px;
+    }
+  }
+
+  &__nav {
+    @include flex-center;
+    gap: $gap-default;
+    margin-top: 20px;
+    flex-wrap: wrap;
+
+    @include media-mobile {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}
+
+// Навигация
+.nav-link {
+  background-color: $button-hover;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: $text-color;
+  text-decoration: none;
+  font-family: $victor-mono;
+  font-size: 14px;
+
+  @include media-mobile {
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// Основной контент
+.content {
+  padding: 40px 20px;
+  background-color: $secondary-bg;
+
+  @include media-mobile {
+    padding: 25px 15px 40px;
+  }
+}
+
+.card-container {
+  @include flex-center(space-between);
+  gap: $gap-default;
+  flex-wrap: wrap;
+
+  @include media-tablet {
+    display: grid;
+    gap: 20px;
+  }
+
+  @include media-desktop {
+    justify-content: space-around;
+  }
+}
+
+// Карточки товаров
+.card {
+  background: white;
+  border-radius: $border-radius;
+  padding: $card-padding;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: $shadow;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  @include card-hover;
+
+  @include media-tablet {
+    width: auto;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  @include media-mobile {
+    width: 90%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+    @include media-mobile {
+      max-height: 180px;
+    }
+  }
+
+  &__title {
+    font-family: $victor-mono;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: $text-color;
+
+    @include media-mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__price {
+    font-family: $great-vibes;
+    font-size: 22px;
+    font-weight: bold;
+    color: $accent-color;
+    margin-bottom: 15px;
+
+    @include media-mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__button {
+    background-color: $primary-bg;
+    color: $text-color;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: $victor-mono;
+    font-size: 18px;
+    transition: $transition;
+
+    @include button-hover;
+
+    @include media-mobile {
+      padding: 10px 20px;
+      font-size: 16px;
+      width: 100%;
+    }
+  }
+}
+
+// Раздел «О нас»
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: white;
+
+  @include media-mobile {
+    padding: 30px 15px;
+  }
+
+  &__title {
+    color: $text-color;
+    margin-bottom: 20px;
+    font-size: 64px;
+    font-family: $great-vibes;
+    line-height: 1.2;
+
+    @include media-tablet {
+      font-size: 48px;
+      line-height: 1.1;
+    }
+
+    @include media-mobile {
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    @include media-desktop {
+      font-size: 56px;
+    }
+  }
+
+  &__description {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: $victor-mono;
+    color: $text-color;
+    text-align: center;
+
+    // Стили для переноса строки в описании
+    br {
+      display: block;
+      margin: 8px 0;
+    }
+
+    @include media-mobile {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 90%;
+    }
+
+    @include media-tablet {
+      max-width: 500px;
+    }
+  }
+}
+
+// Подвал
+.footer {
+  background-color: $primary-bg;
+  color: $text-color;
+  text-align: center;
+  padding: 20px;
+  font-family: $victor-mono;
+
+  p {
+    margin: 0;
+  }
+
+  @include media-mobile {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
